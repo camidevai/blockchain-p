@@ -1,0 +1,39 @@
+{
+  "name": "flavorfi-presentation",
+  "version": "1.0.0",
+  "description": "Presentación interactiva para FlavorFi - Plataforma de gestión y fidelización para negocios de alimentos",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "npx http-server",
+    "deploy": "netlify deploy --prod"
+  },
+  "keywords": [
+    "flavorfi",
+    "presentacion",
+    "react",
+    "framer-motion",
+    "tailwind"
+  ],
+  "author": "FlavorFi Team",
+  "license": "All rights reserved",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "framer-motion": "^10.16.0",
+    "recharts": "^2.10.0",
+    "lucide-react": "^0.263.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/camidevai/blockchain-p.git"
+  },
+  "bugs": {
+    "url": "https://github.com/camidevai/blockchain-p/issues"
+  },
+  "homepage": "https://github.com/camidevai/blockchain-p#readme"
+}
+
