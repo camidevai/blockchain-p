@@ -212,7 +212,7 @@
       import ReactDOM from 'react-dom/client';
       import { motion, useScroll, useTransform, useInView, animate, AnimatePresence } from 'framer-motion';
       import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
-      import { ArrowUpRight, BarChart2, Briefcase, ChevronDown, CheckCircle, Cpu, FileText, Globe, Lightbulb, Menu, Moon, Sun, Users, X, TrendingUp, DollarSign } from 'lucide-react';
+      import { ArrowUpRight, BarChart2, Briefcase, ChevronDown, CheckCircle, Code2, Cpu, FileText, Globe, Heart, Lightbulb, Menu, Moon, Sun, Users, X, TrendingUp, DollarSign, Zap } from 'lucide-react';
 
       // ASSETS
       const LOGO_MARK_URL = 'https://subir-imagen.com/images/2025/10/18/44c5412b-e9aa-4545-8cd2-4db0425941cd.md.png';
@@ -1269,6 +1269,162 @@
           );
       };
 
+      const AboutUs = () => {
+          const teamValues = [
+              {
+                  icon: Code2,
+                  title: 'Innovación Constante',
+                  description: 'Buscamos siempre las mejores soluciones tecnológicas para resolver problemas reales.'
+              },
+              {
+                  icon: Users,
+                  title: 'Colaboración',
+                  description: 'Creemos en el poder del trabajo en equipo y la diversidad de perspectivas.'
+              },
+              {
+                  icon: Zap,
+                  title: 'Excelencia',
+                  description: 'Nos comprometemos con la calidad en cada línea de código y cada decisión.'
+              },
+              {
+                  icon: Heart,
+                  title: 'Pasión',
+                  description: 'Amamos lo que hacemos y eso se refleja en cada proyecto que emprendemos.'
+              }
+          ];
+
+          return (
+              <Section id="about" eyebrow="Nuestro Equipo" title="Quiénes Somos.">
+                  {/* Decorative background elements */}
+                  <div className="absolute inset-0 -z-10 overflow-hidden">
+                      <div className="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
+                      <div className="absolute bottom-20 left-10 w-72 h-72 bg-orange-400/5 rounded-full blur-3xl" />
+                  </div>
+
+                  {/* Main content */}
+                  <div className="max-w-6xl mx-auto">
+                      {/* Hero text */}
+                      <AnimateInView>
+                          <div className="text-center mb-16">
+                              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto mb-6">
+                                  Somos un <span className="font-bold text-primary">equipo multidisciplinario de desarrolladores</span> con años de experiencia transformando ideas en soluciones digitales innovadoras. Cada miembro aporta su expertise único para crear productos que marcan la diferencia.
+                              </p>
+                              <div className="h-1 w-20 bg-gradient-to-r from-primary to-orange-400 rounded-full mx-auto" />
+                          </div>
+                      </AnimateInView>
+
+                      {/* Values grid */}
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                          {teamValues.map((value, index) => (
+                              <AnimateInView key={index} delay={index * 0.1}>
+                                  <motion.div
+                                      whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                                      className="relative group overflow-hidden rounded-2xl border border-primary/50 bg-gradient-to-br from-primary/12 to-primary/4 p-8 backdrop-blur-sm transition-all duration-300 hover:shadow-xl hover:border-opacity-100"
+                                  >
+                                      {/* Decorative elements */}
+                                      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/15 to-transparent rounded-full blur-3xl -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500" />
+                                      <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-orange-400/15 to-transparent rounded-full blur-3xl -ml-12 -mb-12 group-hover:scale-125 transition-transform duration-500" />
+
+                                      {/* Content */}
+                                      <div className="relative z-10">
+                                          <motion.div
+                                              className="flex justify-center items-center mb-6"
+                                              whileHover={{ scale: 1.1, rotate: 5 }}
+                                              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                                          >
+                                              <div className="p-4 rounded-full bg-primary shadow-lg">
+                                                  <value.icon className="w-8 h-8 text-white" />
+                                              </div>
+                                          </motion.div>
+
+                                          <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300 text-center">
+                                              {value.title}
+                                          </h3>
+
+                                          <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed text-center group-hover:text-foreground transition-colors duration-300">
+                                              {value.description}
+                                          </p>
+
+                                          {/* Bottom accent line */}
+                                          <motion.div
+                                              className="h-1 bg-primary rounded-full mt-4 w-0 group-hover:w-12 mx-auto transition-all duration-300"
+                                          />
+                                      </div>
+                                  </motion.div>
+                              </AnimateInView>
+                          ))}
+                      </div>
+
+                      {/* Team stats */}
+                      <AnimateInView>
+                          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-12 border-t border-b border-border">
+                              <motion.div
+                                  whileHover={{ scale: 1.05 }}
+                                  className="text-center"
+                              >
+                                  <motion.div
+                                      className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-orange-400 bg-clip-text text-transparent mb-2"
+                                      initial={{ opacity: 0, y: 20 }}
+                                      whileInView={{ opacity: 1, y: 0 }}
+                                      transition={{ duration: 0.5 }}
+                                  >
+                                      50+
+                                  </motion.div>
+                                  <p className="text-gray-700 dark:text-gray-300 font-semibold">Proyectos Completados</p>
+                              </motion.div>
+
+                              <motion.div
+                                  whileHover={{ scale: 1.05 }}
+                                  className="text-center"
+                              >
+                                  <motion.div
+                                      className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-orange-400 bg-clip-text text-transparent mb-2"
+                                      initial={{ opacity: 0, y: 20 }}
+                                      whileInView={{ opacity: 1, y: 0 }}
+                                      transition={{ duration: 0.5, delay: 0.1 }}
+                                  >
+                                      15+
+                                  </motion.div>
+                                  <p className="text-gray-700 dark:text-gray-300 font-semibold">Años de Experiencia</p>
+                              </motion.div>
+
+                              <motion.div
+                                  whileHover={{ scale: 1.05 }}
+                                  className="text-center"
+                              >
+                                  <motion.div
+                                      className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-orange-400 bg-clip-text text-transparent mb-2"
+                                      initial={{ opacity: 0, y: 20 }}
+                                      whileInView={{ opacity: 1, y: 0 }}
+                                      transition={{ duration: 0.5, delay: 0.2 }}
+                                  >
+                                      100%
+                                  </motion.div>
+                                  <p className="text-gray-700 dark:text-gray-300 font-semibold">Dedicación</p>
+                              </motion.div>
+                          </div>
+                      </AnimateInView>
+
+                      {/* Call to action */}
+                      <AnimateInView delay={0.3}>
+                          <div className="text-center mt-16">
+                              <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+                                  Estamos listos para llevar tu visión al siguiente nivel. Trabajemos juntos para crear algo extraordinario.
+                              </p>
+                              <motion.button
+                                  whileHover={{ scale: 1.05 }}
+                                  whileTap={{ scale: 0.95 }}
+                                  className="px-8 py-4 bg-gradient-to-r from-primary to-orange-400 text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300"
+                              >
+                                  Contáctanos
+                              </motion.button>
+                          </div>
+                      </AnimateInView>
+                  </div>
+              </Section>
+          );
+      };
+
       // MAIN APP
       const App = () => {
         const sections = [
@@ -1313,6 +1469,7 @@
                     <MarketTAM />
                     <Investment />
                     <FAQ />
+                    <AboutUs />
                 </main>
                 <Footer />
               </div>
